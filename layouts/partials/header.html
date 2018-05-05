@@ -1,3 +1,10 @@
 			<header class="clearfix">
 				<h1>{{ with .Site.Params.title }}{{ . | markdownify }}{{ end }}<span>{{ with .Site.Params.subtitle }}{{ . | markdownify }}{{ end }}</span></h1>
+				{{ range .Site.Data.hugrid.social.social_icons }}
+					{{- if isset $.Site.Author .id }}
+					<a href="{{ printf .url (index $.Site.Author .id) }}" title="{{ .title }}">
+						<i class="fab {{ .icon }} fa-2x"></i>
+					</a>
+					{{- end -}}
+				{{ end }}
 			</header>
