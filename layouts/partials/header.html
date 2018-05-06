@@ -3,7 +3,7 @@
 				{{ range .Site.Data.hugrid.social.social_icons }}
 					{{- if isset $.Site.Author .id }}
 					<a href="{{ printf .url (index $.Site.Author .id) }}" title="{{ .title }}">
-						<i class="fab {{ .icon }} fa-2x"></i>
+						<i class="fab {{ .icon }} fa-2x fa-fw"></i>
 					</a>
 					{{- end -}}
 				{{ end }}
